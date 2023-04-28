@@ -1,0 +1,7 @@
+{
+  "//": "Epic Games 免費遊戲清單網址",
+  "API_URL": "https://store-site-backend-static-ipv4.ak.epicgames.com/freeGamesPromotions?locale=en-US&country=TW&allowCountries=TW",
+  "//": "Discord 伺服器 Webhook 連結",
+  "WEBHOOK_URL": "https://discord.com/api/webhooks/1101495250662473830/5Ch6FDCRiFNJxgF-jfmxAhjoaOykYqqnK2a1IvuTx_UpPWnJykkh5IgN8cadyIvPO278",
+  "//": "Epic Games 免費遊戲清單網址"
+}
