@@ -1,7 +1,28 @@
 {
-  "//": "Epic Games 免費遊戲清單網址",
+  "//":      "Epic Games 免費遊戲清單網址 (請勿更改)",
   "API_URL": "https://store-site-backend-static-ipv4.ak.epicgames.com/freeGamesPromotions?locale=en-US&country=TW&allowCountries=TW",
-  "//": "Discord 伺服器 Webhook 連結",
-  "WEBHOOK_URL": "https://discord.com/api/webhooks/1101495250662473830/5Ch6FDCRiFNJxgF-jfmxAhjoaOykYqqnK2a1IvuTx_UpPWnJykkh5IgN8cadyIvPO278",
-  "//": "Epic Games 免費遊戲清單網址"
+  
+  "//":          "Discord 伺服器 Webhook 連結",
+  "WEBHOOK_URL": "[貼上伺服器的Webhook連結]",
+  
+  "//":    "自訂遊戲名稱欄位 (%title% 將被替換為遊戲名稱)",
+  "TITLE": "%title%",
+  
+  "//":          "自訂遊戲簡介欄位 (%description% 將被替換為遊戲簡介)",
+  "DESCRIPTION": "%description%",
+
+  "//":    "自訂顏色 (以16進制顏色碼表示)",
+  "COLOR": "0x03b2f8",
+
+  "//":    "圖片模式 (0=不顯示, 1=縮圖, 2=大圖)",
+  "IMAGE": 2,
+
+  "//":    "自定頁尾訊息",
+  "FOOTER": "優惠結束時間",
+
+  "//":   "自訂標題文字",
+  "NAME": "Epic Games 限時免費遊戲",
+
+  "//":       "自訂標題圖片",
+  "ICON_URL": "https://images-ext-2.discordapp.net/external/uZwBtsyBlOPcwYXyVWYOdAI_6KvCwkBtOt_yTYbgWEQ/https/static-00.iconduck.com/assets.00/epic-games-icon-512x512-7qpmojcd.png"
 }
