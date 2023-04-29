@@ -6,5 +6,5 @@ Send discord message if there are free games in Epic Games store.
 
 # How to use
 Just simply download whole project, customizing settings in config.json. \
-When ``main.py`` run, it will auto detect whether there is new free games on EpicGames.
+When ``main.py`` run, it will auto detect whether there is new free games on EpicGames. \
 If there are, program will auto send message to your discord server's webhook.
