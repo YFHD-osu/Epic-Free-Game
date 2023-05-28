@@ -53,7 +53,7 @@ def main() -> None:
     effective_date = datetime.strptime(data["promotions"]["promotionalOffers"][0]["promotionalOffers"][0]["startDate"],'%Y-%m-%dT%H:%M:%S.000Z') + timedelta(hours=8)
     end_date = datetime.strptime(data["promotions"]["promotionalOffers"][0]["promotionalOffers"][0]["endDate"],'%Y-%m-%dT%H:%M:%S.000Z') + timedelta(hours=8)
     image = data["keyImages"][0]["url"]
-    url = f"https://store.epicgames.com/zh-CN/p/{data['catalogNs']['mappings'][0]['pageSlug']}"
+    url = f"https://store.epicgames.com/zh-CN/p/{data['productSlug']}"
     
     if IMAGE == 1:
       image_payload = {'thumbnail': {'url': image}}
