@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+env:
+  firebaseCred: ${{ secrets.FIREBASECRED }}
+  firebaseConfig: ${{ secrets.FIREBASECONFIG }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
