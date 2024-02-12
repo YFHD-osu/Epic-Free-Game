@@ -46,7 +46,7 @@ class Game():
       startTs=datetime.strptime(data["promotions"]["promotionalOffers"][0]["promotionalOffers"][0]["startDate"],'%Y-%m-%dT%H:%M:%S.000Z') + timedelta(hours=8),
       endTs=datetime.strptime(data["promotions"]["promotionalOffers"][0]["promotionalOffers"][0]["endDate"],'%Y-%m-%dT%H:%M:%S.000Z') + timedelta(hours=8),
       imageUrl=data["keyImages"][0]["url"],
-      storeUrl=f"https://store.epicgames.com/zh-CN/p/{data["catalogNs"]["mappings"][0]["pageSlug"]}"
+      storeUrl=f"https://store.epicgames.com/zh-CN/p/{data['catalogNs']['mappings'][0]['pageSlug']}"
     )
   
   def toEmbed(self):
