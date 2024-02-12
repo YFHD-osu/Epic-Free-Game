@@ -81,8 +81,8 @@ class Game():
       body=json.dumps(self.toEmbed()), 
       headers={'content-type': 'application/json'}
     )
-    if resp.status == 200:
-      logging.info(f"Success posting embed to discord")
+    if resp.status in [200, 204]:
+      logging.info(f"Success posting embed to discord wit code {resp.status}")
     else:
       logging.error(f"Error posting embed to discord with code {resp.status}")
 
