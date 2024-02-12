@@ -1,4 +1,4 @@
-name: run main.py
+name: Check free games
 
 on:
   schedule:
@@ -26,10 +26,10 @@ jobs:
         with:
           python-version: '3.10' # install the python version needed
 
-      - name: Install requirements
+      - name: install requirements
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Execute script # run main.py
+      - name: execute script # run main.py
         run: python main.py --mode firestore
