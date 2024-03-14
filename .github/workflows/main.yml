@@ -1,14 +1,10 @@
 name: Check free games
 
 on:
-  schedule:
-    # Every hours
+  schedule: # Twice a day
     - cron: '0 0 * * *'
     - cron: '0 12 * * *'
   workflow_dispatch:
-  push:
-    branches:
-      - main
 
 env:
   firebaseCred: ${{ secrets.FIREBASECRED }}
