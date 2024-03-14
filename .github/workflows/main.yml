@@ -4,7 +4,7 @@ on:
   schedule:
     # Every hours
     - cron: '0 0 * * *'
-    - cron: '0 1-23 * * *'
+    - cron: '0 12 * * *'
   workflow_dispatch:
   push:
     branches:
