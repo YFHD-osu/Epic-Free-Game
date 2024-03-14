@@ -17,6 +17,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 3
     steps:
       - name: checkout repo content
         uses: actions/checkout@v4 # checkout the repository content
