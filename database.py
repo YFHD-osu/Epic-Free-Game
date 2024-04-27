@@ -43,7 +43,7 @@ class Game():
         case 1: return f"https://store.epicgames.com/bundles/{res['urlSlug']}"
         case _: return None
     except TypeError:
-      Game.getPageSlug(res, mode+1)
+      return Game.getPageSlug(res, mode+1)
 
   @staticmethod
   def fromJson(data: dict):
