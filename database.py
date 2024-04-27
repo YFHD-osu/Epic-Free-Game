@@ -23,7 +23,7 @@ class Game():
       "imageUrl": self.imageUrl,
       "storeUrl": self.storeUrl
     }
-  
+
   @staticmethod
   def fromDict(res: dict):
     return Game(
@@ -34,19 +34,29 @@ class Game():
       imageUrl=res["imageUrl"],
       storeUrl=res["storeUrl"]
     )
+  
+  @staticmethod
+  def getPageSlug(res: dict, mode: int=0):
+    try:
+      match mode:
+        case 0: return res['catalogNs']['mappings'][0]['pageSlug']
+        case 1: return res['urlSlug']
+        case _: return None
+    except TypeError:
+      Game.getPageSlug(res, mode+1)
 
   @staticmethod
   def fromJson(data: dict):
     if data["promotions"] is None or len(data["promotions"]["promotionalOffers"]) == 0:
       return
-    
+
     return Game(
       title=data["title"],
       lore=data["description"],
       startTs=datetime.strptime(data["promotions"]["promotionalOffers"][0]["promotionalOffers"][0]["startDate"],'%Y-%m-%dT%H:%M:%S.000Z') + timedelta(hours=8),
       endTs=datetime.strptime(data["promotions"]["promotionalOffers"][0]["promotionalOffers"][0]["endDate"],'%Y-%m-%dT%H:%M:%S.000Z') + timedelta(hours=8),
       imageUrl=data["keyImages"][0]["url"],
-      storeUrl=f"https://store.epicgames.com/zh-CN/p/{data['catalogNs']['mappings'][0]['pageSlug']}"
+      storeUrl=f"https://store.epicgames.com/zh-CN/p/{Game.getPageSlug(data)}"
     )
   
   def toEmbed(self):
