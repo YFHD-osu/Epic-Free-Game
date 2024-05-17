@@ -37,13 +37,13 @@ class Game():
   
   @staticmethod
   def getPageSlug(res: dict, mode: int=0):
-    try:
-      match mode:
-        case 0: return f"https://store.epicgames.com/p/{res['catalogNs']['mappings'][0]['pageSlug']}"
-        case 1: return f"https://store.epicgames.com/bundles/{res['urlSlug']}"
-        case _: return None
-    except TypeError:
-      return Game.getPageSlug(res, mode+1)
+    if not len(res['catalogNs']['mappings']):
+      return f"https://store.epicgames.com/p/{res['productSlug']}"
+    
+    if (res['catalogNs']['mappings'] == None):
+      return f"https://store.epicgames.com/bundles/{res['urlSlug']}"
+    
+    return f"https://store.epicgames.com/p/{res['catalogNs']['mappings'][0]['pageSlug']}"
 
   @staticmethod
   def fromJson(data: dict):
@@ -146,7 +146,8 @@ class DataBase():
   con = sqlite3.connect("database.db")
   cur = con.cursor()
 
-  def __new__(self) -> None:
+  
+  def init() -> None:
     DataBase.ensureTable("FreeGames", "title TEXT, description TEXT, effective_date INTEGER, end_date INTEGER, image TEXT, url TEXT")
     DataBase.ensureTable("Settings", "key TEXT, value TEXT")
 

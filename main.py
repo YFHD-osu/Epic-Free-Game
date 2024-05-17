@@ -20,6 +20,7 @@ def firebase() -> None:
       FireStore.addData(data)
 
 def local() -> None:
+  DataBase.init()
   DataBase.readSettings()
   games: list[Game] = Game.fetchFree()
   for data in games:
