@@ -49,6 +49,9 @@ class Game():
   def fromJson(data: dict):
     if data["promotions"] is None or len(data["promotions"]["promotionalOffers"]) == 0:
       return
+    
+    if data['catalogNs']['mappings'] is None: 
+      return
 
     return Game(
       title=data["title"],
